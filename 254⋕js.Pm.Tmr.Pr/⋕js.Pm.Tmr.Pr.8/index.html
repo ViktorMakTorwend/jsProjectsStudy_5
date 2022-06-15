@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Tmr.Pr.8</title>
+	</head>
+	<body>
+     
+        <p></p>
+
+	<script>
+    
+        let p = document.querySelector('p');
+    
+        function toClock(){
+            setInterval(func, 1000);
+          
+            function func (){
+                let date = new Date();
+                p.innerHTML = (date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds());
+            }   
+        }
+        
+        toClock();
+
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.LHH.1</title>
+	</head>
+	<body>
+     
+        <div id="divElem" ></div>
+        <p>hear is a text from the input</p>
+
+	<script>
+    
+        let divElem = document.querySelector('#divElem');
+        let pElem = document.querySelector('p');
+
+        for (let i = 1; i <= 5; i++){
+            let inpElem = document.createElement('input');
+            inpElem.addEventListener('blur', function(){
+                pElem.innerHTML = this.value;
+            });
+            divElem.appendChild(inpElem);
+        }
+        
+    
+	</script>
+    
+	</body>
+</html>
+

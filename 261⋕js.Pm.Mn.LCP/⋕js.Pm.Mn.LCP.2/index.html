@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.LCP.2</title>
+	</head>
+	<body>
+     
+        <ul id="elem"></ul>
+
+	<script>
+        
+        let ulElem = document.querySelector('#elem');
+        let arr = [1, 2, 3, 4, 5];
+
+        for (let elem of arr) {
+            let p = document.createElement('p');
+            p.innerHTML = elem + '. text';
+            p.addEventListener('click', function (){
+                alert(p.textContent);
+            });
+            ulElem.appendChild(p);
+        }   
+    
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Tmr.Pr.5</title>
+	</head>
+	<body>
+     
+        <input type="text">
+        <button>push</button>
+        <p></p>
+
+	<script>
+        
+        let inp = document.querySelector('input');
+        let p = document.querySelector('p')
+        btn = document.querySelector('button');
+
+        btn.addEventListener('click', function() {
+            let setInrv = setInterval(func, 1000);
+            let num = inp.value;
+
+            function func(){
+                if ( num <= 0){
+                    clearInterval(setInrv);
+                } 
+                p.innerHTML = num--;             
+            }
+        });
+     
+    
+	</script>
+    
+	</body>
+</html>
+

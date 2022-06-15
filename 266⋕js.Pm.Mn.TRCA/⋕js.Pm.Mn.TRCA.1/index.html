@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.TRCA.1</title>
+ 
+	</head>
+	<body>
+
+        <button>Add a row</button>
+        <table id="table" border="1"></table>
+            
+	<script>
+
+        let table = document.querySelector('#table');
+        let btn = document.querySelector('button');
+        let numColums = 3;
+
+        btn.addEventListener('click', function(){
+            createTab(numColums);
+        })
+        
+        function createTab (num){
+            let tr = document.createElement('tr');
+            for (let i = 0; i < num; i++){
+               let tdElem = document.createElement('td');
+               tr.appendChild(tdElem);
+            }           
+            table.appendChild(tr);
+        }  
+
+	</script>
+    
+	</body>
+</html>
+

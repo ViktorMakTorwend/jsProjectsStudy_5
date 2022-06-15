@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.IHE.1</title>
+	</head>
+	<body>
+     
+        <ol id="elem"></ol>
+        <button id="button">click me</button>
+
+	<script>
+    
+        let olElem = document.querySelector('#elem');
+        let btn = document.querySelector('#button');
+
+        btn.addEventListener('click', function(){
+            let liElem = document.createElement('li');
+            liElem.addEventListener('click', function(){
+                liElem.textContent = '!'
+            })
+            olElem.appendChild(liElem);
+        });
+    
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Tmr.Pr.1</title>
+	</head>
+	<body>
+     
+        <button>Start timer</button>
+        <p>5</p>
+
+	<script>
+        //Дана кнопка. Дан абзац, текстом которого является число. По нажатию на кнопку запустите таймер, 
+        //который каждую секунду будет увеличивать текст абзаца на 1.
+        let btnStart = document.querySelector('button');
+        let p = document.querySelector('p');
+
+        btnStart.addEventListener('click', function() {
+            setInterval(func, 1000);
+
+            function func(){
+                p.innerHTML ++;
+            }
+
+        });
+     
+    
+	</script>
+    
+	</body>
+</html>
+

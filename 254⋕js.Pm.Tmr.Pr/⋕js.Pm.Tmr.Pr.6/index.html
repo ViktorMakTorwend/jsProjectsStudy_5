@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Tmr.Pr.6</title>
+	</head>
+	<body>
+     
+        <button id="btnStart">Start</button>
+        <button id="btnStop" >Stop</button>
+        <p></p>
+
+	<script>
+    
+        let p = document.querySelector('p')
+        let btnStart = document.querySelector('#btnStart');
+        let btnStop = document.querySelector('#btnStop');
+        let setInrv;
+
+        btnStart.addEventListener('click', function startCount() {
+            setInrv = setInterval(func, 1000);
+            p.innerHTML = 1;
+
+            function func(){
+                p.innerHTML ++;                   
+            };
+
+            btnStart.removeEventListener('click', startCount); 
+        }); 
+
+        btnStop.addEventListener('click', function(){
+            clearInterval(setInrv);
+        });
+
+	</script>
+    
+	</body>
+</html>
+

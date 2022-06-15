@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.TCVA.1</title>
+ 
+	</head>
+	<body>
+
+        <table id="table" border="1">
+        </table>
+            
+	<script>
+        
+        let tabElem = document.querySelector('#table');
+        let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]; 
+
+        function createTab (){
+            for (let subarr of arr){
+                let trElem = document.createElement('tr');
+                for( let el of subarr){
+                    let tdElem = document.createElement('td');
+                    tdElem.textContent = el;
+                    trElem.appendChild(tdElem);
+                }
+                tabElem.appendChild(trElem);
+            }    
+        }  
+
+        createTab();
+
+	</script>
+    
+	</body>
+</html>
+

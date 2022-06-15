@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Tmr.PCBP.1</title>
+	</head>
+	<body>
+     
+        <input type="button" id="elem" value="10">
+
+	<script>
+        
+        let elem = document.querySelector('#elem');
+
+        elem.addEventListener('click', function() {
+            setInterval(func, 1000, this);
+
+            function func(self){
+                self.value--;
+            }
+
+        });
+     
+    
+	</script>
+    
+	</body>
+</html>
+

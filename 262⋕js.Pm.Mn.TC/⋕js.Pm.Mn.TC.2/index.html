@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.TC.2</title>
+ 
+	</head>
+	<body>
+     
+         <table id="table" border="1">
+         </table>
+            
+	<script>
+        
+        let tabElem = document.querySelector('#table');
+
+        function createTab (numTr, numTd){
+            for (let i = 0; i < numTr; i++){
+                let trElem = document.createElement('tr');
+                for( let k = 0; k < numTd; k++){
+                    let tdElem = document.createElement('td');
+                    trElem.appendChild(tdElem);
+                }
+                tabElem.appendChild(trElem);
+            }    
+        }
+
+        createTab(10,5);  
+
+	</script>
+    
+	</body>
+</html>
+

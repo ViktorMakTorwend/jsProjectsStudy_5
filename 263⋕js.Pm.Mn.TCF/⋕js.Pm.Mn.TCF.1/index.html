@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.TCF.1</title>
+ 
+	</head>
+	<body>
+     
+        <input type="text" id="numTr" placeholder="Input num of rows">
+        <input type="text" id="numTd" placeholder="Input num of cols">
+
+        <table id="table" border="1">
+        </table>
+            
+	<script>
+        
+        let tabElem = document.querySelector('#table');
+        let inpTr = document.querySelector('#numTr');
+        let inpTd = document.querySelector('#numTd');
+        let numTr = 1 , numTd = 1, numText = 1;
+
+        inpTr.addEventListener('keydown', function (event){
+            if (event.code == 'Enter'){
+                numTr = +(inpTr.value); 
+                inpTd.focus();
+            }
+        });
+
+        inpTd.addEventListener('keydown', function (event){
+            if (event.code == 'Enter'){
+                numTd = inpTd.value;
+                createTab(numTr, numTd);
+                inpTd.blur();
+            }  
+        });
+
+        function createTab (num1, num2){
+            for (let i = 0; i < num1; i++){
+                let trElem = document.createElement('tr');
+                for( let k = 0; k < num2; k++){
+                    let tdElem = document.createElement('td');
+                    tdElem.textContent += numText;
+                    numText ++;
+                    trElem.appendChild(tdElem);
+                }
+                tabElem.appendChild(trElem);
+            }    
+        }  
+
+	</script>
+    
+	</body>
+</html>
+

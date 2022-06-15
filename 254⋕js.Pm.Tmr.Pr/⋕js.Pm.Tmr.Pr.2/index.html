@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Tmr.Pr.2</title>
+	</head>
+	<body>
+     
+        <button>Start timer</button>
+        <p>10</p>
+
+	<script>
+        
+        let btnStart = document.querySelector('button');
+        let p = document.querySelector('p');
+
+        btnStart.addEventListener('click', function() {
+            let setInrv = setInterval(func, 1000);
+
+            function func(){
+                if(p.innerHTML <= 1){
+                    clearInterval(setInrv);
+                }
+                p.innerHTML++;
+            }
+
+        });
+     
+    
+	</script>
+    
+	</body>
+</html>
+
