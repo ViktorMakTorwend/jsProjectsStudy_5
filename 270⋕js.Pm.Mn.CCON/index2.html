@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.CCON.2</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+            
+	<script>
+
+        let table = document.querySelector('#table');
+        
+        function orderedNum (){
+
+            let tds = document.querySelectorAll('td');
+            for (let k = 1; k <= tds.length; k++){
+                tds[k-1].addEventListener('click', function(){
+                    tds[k-1].textContent = (tds.length - k);
+                })      
+            }      
+        }  
+
+        orderedNum();
+
+	</script>
+    
+	</body>
+</html>
+

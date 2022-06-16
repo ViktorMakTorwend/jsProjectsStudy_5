@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.TCM.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <button>Double the num</button>
+        <table id="table">
+            <tr>
+                <td>5</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>1</td>
+            </tr>
+        </table>
+            
+	<script>
+
+        let table = document.querySelector('#table');
+        let btn = document.querySelector('button');
+
+        btn.addEventListener('click', function(){
+            doubleNum();
+        });
+        
+        function doubleNum (){
+
+                let tds = document.querySelectorAll('td');      
+                for (let tdElem of tds){
+                    tdElem.textContent = tdElem.textContent * 2;
+                }
+        }  
+
+	</script>
+    
+	</body>
+</html>
+

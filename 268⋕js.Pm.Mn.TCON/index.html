@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.TCON.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+            
+	<script>
+
+        let table = document.querySelector('#table');
+        
+        function orderedNum (){
+            let tds = document.querySelectorAll('td');
+            for(let i = 0; i < tds.length; i++){
+                tds[i].textContent = tds.length - i;
+            }     
+        }  
+        
+        orderedNum();
+
+	</script>
+    
+	</body>
+</html>
+
