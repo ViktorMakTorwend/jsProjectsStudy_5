@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.IBA.1</title>
+	</head>
+	<body>
+
+        <ul id="elem">
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+            
+	<script>
+
+        let ul = document.querySelector('#elem');
+
+        function addElems (){
+            let liStart = document.createElement('li');
+            liStart.textContent = 'start';
+            ul.prepend(liStart);
+
+            let liFinish = document.createElement('li');
+            liFinish.textContent = 'finish';
+            ul.append(liFinish);
+        }
+
+        addElems();
+	</script>
+    
+	</body>
+</html>
+

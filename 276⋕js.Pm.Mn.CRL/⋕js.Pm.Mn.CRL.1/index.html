@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.CRL.1</title>
+	</head>
+	<body>
+
+        <ul id="parent" >
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+            
+	<script>
+
+        let ulParent   = document.querySelector('#parent');
+       
+        function addA (){
+            let lis = ulParent.querySelectorAll('li');
+           
+            for (let li of lis){
+                let aElem = document.createElement('a');
+                aElem.textContent = ' delete';
+                aElem.href = '#';
+                aElem.addEventListener('click', function (event){
+                    li.remove();
+                    event.preventDefault();
+                })
+                li.appendChild(aElem);
+            }  
+        }
+
+        addA();
+
+	</script>
+    
+	</body>
+</html>
+

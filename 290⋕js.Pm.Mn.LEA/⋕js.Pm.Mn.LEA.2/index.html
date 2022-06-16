@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.LEA.2</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+            </tr>
+            <tr>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+            </tr>
+            <tr>
+                <td>text3</td>
+                <td>text3</td>
+                <td>text3</td>
+                <td>text3</td>
+                <td>text3</td>
+                <td>text3</td>
+            </tr>
+        </table>
+    
+	<script>
+        
+        function toActivate (){
+            let tab = document.querySelector('#table');
+            let trs = tab.querySelectorAll('tr');
+            
+            for (let trElem of trs){
+                let tds = trElem.querySelectorAll('td');
+                let numOfActiveTd = 0;
+                for (let tdElem of tds){     
+                        tdElem.addEventListener('click', function (){
+                            if(numOfActiveTd < 5){
+                                tdElem.classList.add('active');
+                                numOfActiveTd++;
+                            }   
+                        })              
+                }
+            }
+        }
+
+        toActivate();
+
+	</script>
+    
+	</body>
+</html>
+

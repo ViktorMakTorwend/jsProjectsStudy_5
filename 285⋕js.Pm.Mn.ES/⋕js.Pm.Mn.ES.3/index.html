@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.ES.3</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+            </tr>
+            <tr>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+            </tr>
+            <tr>
+                <td>text3</td>
+                <td>text3</td>
+                <td>text3</td>
+            </tr>
+        </table>
+    
+	<script>
+        
+        function applyStyle (){
+
+            let table = document.querySelector('#table');
+            let trs = document.querySelectorAll('tr');
+
+            for (trElem of trs){
+                let tdEelm = document.createElement('td');
+                trElem.appendChild(tdEelm);
+
+                let aElem = document.createElement('a');
+                aElem.textContent = 'make color green';
+                aElem.href = '';
+                tdEelm.appendChild(aElem);
+
+                    aElem.addEventListener('click', function func(event){
+                        tdEelm.parentElement.classList.toggle('makeGreen');
+                        event.preventDefault();
+                    })
+            }
+
+        }
+
+        applyStyle();
+
+	</script>
+    
+	</body>
+</html>
+

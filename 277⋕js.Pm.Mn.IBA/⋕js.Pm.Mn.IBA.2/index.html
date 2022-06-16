@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.IBA.2</title>
+	</head>
+	<body>
+
+        <ul id="parent">
+            <li>text</li>
+            <li>text</li>
+            <li id="elem">text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+            
+	<script>
+
+        let ul = document.querySelector('#parent');
+        let liBefore = document.querySelector('#elem')
+
+        function insElem (){
+            let liElem = document.createElement('li');
+            liElem.textContent = 'new';
+            ul.insertBefore(liElem, liBefore);
+        }
+
+        insElem();
+	</script>
+    
+	</body>
+</html>
+

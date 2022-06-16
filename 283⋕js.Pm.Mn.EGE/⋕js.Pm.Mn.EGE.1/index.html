@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EGE.1</title>
+	</head>
+	<body>
+
+        <ul>
+            <li>text1</li>
+            <li>text2</li>
+            <li>text3</li>
+        </ul>
+            
+	<script>
+
+        let ul = document.querySelector('ul');
+
+        function editElLi () {
+            let lis = document.querySelectorAll('li');
+            for (let li of lis){
+                li.addEventListener('click', function func(){
+                    let inpElem = document.createElement('input');
+                    inpElem.value = li.textContent;
+                    li.textContent = '';
+                    li.appendChild(inpElem); 
+
+                    inpElem.addEventListener('blur', function (){
+                        li.textContent = inpElem.value; 
+                        li.addEventListener('click',func)                   
+                    })
+                    
+                    li.removeEventListener('click', func);      
+                })       
+            }
+        }
+
+        editElLi();
+
+	</script>
+    
+	</body>
+</html>
+

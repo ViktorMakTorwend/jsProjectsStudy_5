@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EGE.2</title>
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td>text</td>
+                <td>text</td>
+                <td>text</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>text</td>
+                <td>text</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>text</td>
+                <td>text</td>
+            </tr>
+        </table>
+            
+	<script>
+
+        let table = document.querySelector('#table');
+
+        function editTable () {
+            let tds = table.querySelectorAll('td');
+            for (let td of tds){
+                td.addEventListener('click', function func (){
+                    let inpEdit = document.createElement('input');
+                    inpEdit.value = td.textContent;
+                    td.textContent = '';
+                    
+                    td.appendChild(inpEdit);
+                    inpEdit.addEventListener('blur', function (){
+                        td.textContent = inpEdit.value;
+                        td.addEventListener('click', func)
+                    });
+
+                    td.removeEventListener('click', func)
+                })
+            }
+        }
+
+        editTable();
+
+	</script>
+    
+	</body>
+</html>
+

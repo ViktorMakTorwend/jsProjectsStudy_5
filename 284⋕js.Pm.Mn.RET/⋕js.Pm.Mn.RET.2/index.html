@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.RET.2</title>
+	</head>
+	<body>
+
+        <div id="parent">
+            <p>text1</p>
+            <p>text2</p>
+            <p>text3</p>
+        </div>
+            
+	<script>
+        let parent = document.querySelector('#parent');
+        
+        function editDel (){
+            let ps = parent.querySelectorAll('p');
+            for (let p of ps){
+
+                // block for adding tegs "span"
+                let spanEl = document.createElement('span');
+                spanEl.textContent = p.textContent;
+                p.textContent = '';
+                p.appendChild(spanEl); 
+
+                // block for deleting of paragraph
+                let aDel = document.createElement('a');
+                aDel.textContent = ' delete all the paragraph';
+                aDel.href = '';
+                p.appendChild(aDel);
+
+                    aDel.addEventListener('click', function (event){
+                        p.remove();
+                        event.preventDefault();
+                    })
+
+                // block for editing of paragraph          
+                p.firstChild.addEventListener('click', function func(){
+                    let inpEdit = document.createElement('input');
+                    inpEdit.value = p.firstChild.textContent;
+                    p.firstChild.textContent = '';
+                    p.firstChild.appendChild(inpEdit);
+
+                        inpEdit.addEventListener('blur', function (){
+                            p.firstChild.textContent = inpEdit.value;
+                            p.firstChild.addEventListener('click', func)
+                        })
+
+                    p.firstChild.removeEventListener('click', func);
+                })          
+            }
+        }
+
+        editDel();
+
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.CRL.2</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+            
+	<script>
+
+        let table = document.querySelector('#table');
+
+        function addColForDelete () {
+            let trs = document.querySelectorAll('tr');
+            for (let trElem of trs){
+                let tdElem = document.createElement('td');
+                let aElem = document.createElement('a');
+
+                aElem.textContent = 'delete this row';
+                aElem.href = '';
+                aElem.addEventListener('click', function (event){
+                    trElem.remove();
+                    event.preventDefault();
+                })
+                
+                tdElem.appendChild(aElem)
+                trElem.appendChild(tdElem);      
+            }
+        }
+
+        addColForDelete();
+
+	</script>
+    
+	</body>
+</html>
+

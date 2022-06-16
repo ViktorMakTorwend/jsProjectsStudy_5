@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EA.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            
+        </ul>
+    
+	<script>
+        
+        function applyStyle (){
+            let ulElem = document.querySelector('ul');
+            let lis = ulElem.querySelectorAll('li');
+
+            for (let liElem of lis){
+                liElem.addEventListener('click', function(){
+                    liElem.classList.toggle('active');
+                })
+            }
+        }
+
+        applyStyle();
+
+	</script>
+    
+	</body>
+</html>
+

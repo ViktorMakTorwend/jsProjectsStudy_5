@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.RL.1</title>
+	</head>
+	<body>
+
+        <div id="parent">
+            <p id="elem">text</p>
+            <a href="#" id="remove">remove</a>
+        </div>
+            
+	<script>
+
+        let elem   = document.querySelector('#elem');
+        let remove = document.querySelector('#remove');
+
+        remove.addEventListener('click', function(event) {
+            elem.parentElement.removeChild(elem);
+            event.preventDefault();
+        });
+
+	</script>
+    
+	</body>
+</html>
+

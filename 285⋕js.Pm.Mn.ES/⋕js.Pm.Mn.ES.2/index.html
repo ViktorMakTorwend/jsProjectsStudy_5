@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.ES.2</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <p>text1</p>
+        <p>text2</p>
+        <p>text3</p>
+    
+	<script>
+        
+        function applyStyle (){
+            let ps = document.querySelectorAll('p');
+
+            for (pElem of ps){
+                let spanElem = document.createElement('span');
+                spanElem.textContent = pElem.textContent;
+                pElem.textContent = '';
+                pElem.appendChild(spanElem);
+              
+                let aElem = document.createElement('a');
+                aElem.textContent = ' cross the text';
+                aElem.href = '';
+                pElem.appendChild(aElem);
+
+                    aElem.addEventListener('click', function func(event){
+                        spanElem.classList.add('cross');
+                        event.preventDefault();
+                        aElem.remove();
+                    })
+            }
+
+        }
+
+        applyStyle();
+
+	</script>
+    
+	</body>
+</html>
+

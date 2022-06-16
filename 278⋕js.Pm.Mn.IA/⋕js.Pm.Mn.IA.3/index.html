@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.IA.3</title>
+	</head>
+	<body>
+
+        <div id="elem" style="border: 1px solid red;">
+            <p>text</p>
+            <p>text</p>
+            <p>text</p>
+        </div>
+            
+	<script>
+
+        let div = document.querySelector('#elem');
+
+        function insElem (){
+            let pElem = document.createElement('p');
+            pElem.textContent = '!!!';
+            div.insertAdjacentElement("afterBegin", pElem)
+        }
+
+        insElem();
+
+	</script>
+    
+	</body>
+</html>
+

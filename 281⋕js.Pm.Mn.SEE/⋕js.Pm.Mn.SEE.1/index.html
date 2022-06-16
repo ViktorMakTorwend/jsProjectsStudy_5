@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.SEE.1</title>
+	</head>
+	<body>
+
+        <div id="parent">
+            <p id="elem">text</p>
+            <input id="input">
+        </div>
+            
+	<script>
+
+        let parent = document.querySelector('#parent');
+        let elem = document.querySelector('#elem');
+        let inp = document.querySelector('#input');
+
+        inp.value = elem.textContent;
+        inp.addEventListener('keydown', function (){
+            elem.textContent = inp.value;
+        })
+
+	</script>
+    
+	</body>
+</html>
+

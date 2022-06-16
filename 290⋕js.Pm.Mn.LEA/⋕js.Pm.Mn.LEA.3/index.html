@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.LEA.3</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table" border="1">
+            <tr>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+                <td>text1</td>
+            </tr>
+            <tr>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+                <td>text2</td>
+            </tr>
+            <tr>
+                <td>text31</td>
+                <td>text32</td>
+                <td>text33</td>
+                <td>text34</td>
+                <td>text35</td>
+                <td>text36</td>
+            </tr>
+        </table>
+    
+	<script>
+        
+        function toActivate (){
+            let tab = document.querySelector('#table');
+            let trs = tab.querySelectorAll('tr');
+            
+            for (let trElem of trs){
+                let tds = trElem.querySelectorAll('td');
+                for (let tdElem of tds){     
+                        tdElem.addEventListener('click', function (){
+                            // Надо предусмотреть три ситуации при наступлении события
+                            let tdPr = tdElem.previousElementSibling;
+                            let tdNxt = tdElem.nextElementSibling;
+
+                                // Первая - предыдущая ячейка от выбранной отсутствует и следующая не активна
+                                if(!tdPr && !tdNxt.classList.contains('active')) {
+                                    tdElem.classList.add('active');
+                                    console.log(tdElem.previousElementSibling)
+                                }
+                                // Вторая - слудующая после выбранной отсутствует и предыдущая не активна
+                                if(!tdNxt && !tdPr.classList.contains('active')) {
+                                    tdElem.classList.add('active');
+                                    console.log(tdElem.previousElementSibling)
+                                }
+                                // Третья - с обеих сторон есть ячейки и они не активны
+                                if (tdPr && tdNxt && !tdNxt.classList.contains('active') && !tdPr.classList.contains('active')) {
+                                    tdElem.classList.add('active');
+                                }
+
+                        })              
+                }
+            }
+        }
+
+        toActivate();
+
+	</script>
+    
+	</body>
+</html>
+
