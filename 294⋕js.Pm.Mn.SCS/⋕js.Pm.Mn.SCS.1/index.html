@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.SCS.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        
+    
+	<script>
+        
+        +function paintTd (){
+            let table = document.querySelector('#table')
+            let tds = table.querySelectorAll('td:nth-child(3)');
+
+            for (let td of tds){
+                td.classList.toggle('paintRed');
+            }
+        }();
+        
+	</script>
+    
+	</body>
+</html>
+

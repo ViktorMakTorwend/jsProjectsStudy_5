@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.DEF.2</title>
+	</head>
+	<body>
+
+        <p id="elem1"></p>
+        <p class="elem2"></p>
+        
+    
+	<script>
+        
+        function setAttr (CSSParam, nameCSS, newValue){
+            let elems = document.querySelectorAll(CSSParam);
+            if (nameCSS != 'class'){
+                for (elem of elems){
+                    elem.nameCSS = newValue;
+                    console.log(elem.nameCSS);  
+                }
+            }
+            else {
+                for (elem of elems){
+                    elem.className = newValue;
+                    console.log(elem.className);  
+                }
+            } 
+            
+        }
+
+        setAttr ('#elem1', 'id', 'elem3');
+        setAttr ('.elem2', 'class', 'elem4');
+    
+	</script>
+    
+	</body>
+</html>
+

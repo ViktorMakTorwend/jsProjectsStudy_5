@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.DEF.1</title>
+	</head>
+	<body>
+
+        <p id="elem1"></p>
+        <p class="elem1" ></p>
+        
+    
+	<script>
+        
+        function setText (CSSParam, textParam){
+            let elems = document.querySelectorAll(CSSParam);
+            for (elem of elems){
+                elem.textContent = textParam;
+            }
+        }
+
+        setText ('#elem1', 'text1');
+        setText('.elem1', 'text2');
+        
+	</script>
+    
+	</body>
+</html>
+

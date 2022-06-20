@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.PGAP.2</title>
+	</head>
+	<body>
+        
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+	<script>
+        
+        let ul = document.querySelector('ul');
+    
+        function appendElem (ulParam, textParam){
+            let li = document.createElement('li');
+            li.textContent = textParam;
+            ulParam.appendChild(li);
+        }
+
+        appendElem(ul, 'text');
+
+	</script>
+    
+	</body>
+</html>
+

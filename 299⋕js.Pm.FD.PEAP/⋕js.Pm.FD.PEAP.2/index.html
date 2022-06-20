@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.PEAP.2</title>
+	</head>
+	<body>
+
+        <p class="elem">1</p>
+        <p class="elem">2</p>
+        <p class="elem">3</p>
+        <p class="elem">4</p>
+        <p class="elem">5</p>
+        
+    
+	<script>
+        let elems = document.querySelectorAll('.elem');
+
+        function appendText (elemArr, textPar){
+            for (let elem of elemArr){
+                elem.textContent = textPar;
+            }
+        }
+
+       appendText (elems, 'text, tetx');
+    
+	</script>
+    
+	</body>
+</html>
+

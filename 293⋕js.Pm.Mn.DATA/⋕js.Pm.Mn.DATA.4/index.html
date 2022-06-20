@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.DATA.4</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        
+    
+	<script>
+ 
+        +function setUserAttribute (){
+            let table = document.querySelector('#table');
+            let trs = document.querySelectorAll('tr');
+            let numRow = 1;
+
+            for( let tr of trs){
+                let tds = tr.querySelectorAll('td');
+                let numCol = 1;
+                for(let td of tds){
+                    td.setAttribute('data-row', numRow);
+                    td.setAttribute('data-col', numCol++);
+                        td.addEventListener('click', function (){
+                            let col = this.getAttribute('data-col');
+                            let row = this.getAttribute('data-row');
+
+                            if (col == row){
+                                this.classList.toggle('paintRed');
+                            }
+                            else (this.classList.toggle('paintGreen'));
+                        });
+                }
+                numRow++;
+            }
+
+        }();
+        
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.PGAP.3</title>
+	</head>
+	<body>
+        
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+	<script>
+        
+        let arr = ['a', 'b', 'c'];
+        let ul = document.querySelector('ul');
+
+        +function getULfromArr (){
+            for (i = 0; i < arr.length; i++){
+                appendElem(ul, arr[i]);
+            }
+        }();
+    
+        function appendElem (ulParam, textParam){
+            let li = document.createElement('li');
+            li.textContent = textParam;
+            ulParam.appendChild(li);
+        }
+
+
+	</script>
+    
+	</body>
+</html>
+

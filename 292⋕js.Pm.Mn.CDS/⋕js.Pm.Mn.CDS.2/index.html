@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.CDS.2</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table">
+            <tr>
+                <td data-row="1" data-col="1"></td>
+                <td data-row="1" data-col="2"></td>
+                <td data-row="1" data-col="3"></td>
+            </tr>
+            <tr>
+                <td data-row="2" data-col="1"></td>
+                <td data-row="2" data-col="2"></td>
+                <td data-row="2" data-col="3"></td>
+            </tr>
+            <tr>
+                <td data-row="3" data-col="1"></td>
+                <td data-row="3" data-col="2"></td>
+                <td data-row="3" data-col="3"></td>
+            </tr>
+        </table>
+
+        <button>push to paint</button>
+        
+    
+	<script>
+ 
+        +function paintColOfTable (){
+
+            let col = 2;
+            let row = 3;
+
+            let table = document.querySelector('#table');
+            let tds = table.querySelectorAll('td');
+            let btn = document.querySelector('button');
+
+
+            btn.addEventListener('click', function(){
+                paint (col, row);
+            })
+
+            function paint (colParam, rowParam){
+                for (let td of tds){
+                   if (td.getAttribute('data-col') == colParam && td.getAttribute('data-row') == rowParam) {
+                       td.classList.toggle('paintedRed');
+                   }
+                }
+            }
+        }();
+        
+        
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.CDS.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        <table id="table">
+            <tr>
+                <td data-col="1"></td>
+                <td data-col="2"></td>
+                <td data-col="3"></td>
+            </tr>
+            <tr>
+                <td data-col="1"></td>
+                <td data-col="2"></td>
+                <td data-col="3"></td>
+            </tr>
+            <tr>
+                <td data-col="1"></td>
+                <td data-col="2"></td>
+                <td data-col="3"></td>
+            </tr>
+        </table>
+        
+    
+	<script>
+ 
+        +function paintColOfTable (){
+            let table = document.querySelector('#table');
+            let tds = table.querySelectorAll('td');
+
+            for(let td of tds){
+                td.addEventListener('click', function (){
+                    paint(td);
+                })
+            }
+
+            function paint (tdParam){
+                for (let td of tds){
+                   if (td.getAttribute('data-col') == tdParam.getAttribute('data-col')) {
+                       td.classList.toggle('paintedRed');
+                   }
+                }
+            }
+        }();
+        
+        
+	</script>
+    
+	</body>
+</html>
+
