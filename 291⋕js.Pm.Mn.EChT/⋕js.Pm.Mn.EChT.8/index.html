@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.8</title>
+    <link rel="stylesheet" href="style.css">   
+	</head>
+	<body>
+
+        
+    
+	<script>
+    
+        let employees = [
+        {name: 'employee1', age: 30, salary: 400},
+        {name: 'employee2', age: 31, salary: 500},
+        {name: 'employee3', age: 32, salary: 600},
+        ];
+
+        let body = document.querySelector('body');
+
+
+        function showEmployees (){
+            let table = document.createElement('table');
+            body.appendChild(table);
+
+            // fill the table of data
+            for (let i = 0; i < employees.length; i++){
+                let trElem = document.createElement('tr');
+                for (let key in employees[i]){
+                    let tdElem = document.createElement('td');
+                    tdElem.textContent = employees[i][key];
+                    trElem.appendChild(tdElem);
+                        tdElem.addEventListener('click', editTable);
+                }
+                deleteRow(trElem);
+                table.appendChild(trElem);
+            }
+
+            // add a possibility to edit
+            function editTable (){
+                let inpElem = document.createElement('input');
+                inpElem.value = this.textContent;
+                this.textContent = '';
+                this.appendChild(inpElem);
+                let self = this;
+                     inpElem.addEventListener('keydown', function(event){
+                        if (event.code == 'Enter'){
+                           self.textContent = inpElem.value;
+                           self.addEventListener('click', editTable);   
+                        }
+                    }) 
+                this.removeEventListener('click', editTable);    
+            }
+
+            // add a possibility to delete any row
+            function deleteRow (tr){
+                let tdElem = document.createElement('td');
+                let aElem = document.createElement('a');
+                aElem.textContent = 'delete the row';
+                aElem.href = '';
+                tdElem.appendChild(aElem);
+                tr.appendChild(tdElem);
+                    aElem.addEventListener('click', function (event){
+                        event.preventDefault();
+                        tr.remove();
+                    })
+            }
+        }
+
+        showEmployees();
+
+	</script>
+    
+	</body>
+</html>
+

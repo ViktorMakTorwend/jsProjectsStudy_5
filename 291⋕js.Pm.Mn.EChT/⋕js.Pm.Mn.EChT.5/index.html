@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.5</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+        
+    
+	<script>
+    
+        let arr = ['a', 'b', 'c', 'd'];
+        
+        function createList () {
+            let body = document.querySelector('body');
+
+            // Create list
+            let ulElem = document.createElement('ul');
+            body.appendChild(ulElem);
+
+            for (let i = 0; i < arr.length; i++){
+                let liElem = document.createElement('li');
+                let spanElem = document.createElement('span');
+                spanElem.textContent = arr[i];
+                liElem.appendChild(spanElem);
+                ulElem.appendChild(liElem);
+
+            } 
+
+            // Add a possibility to edit
+            let lis = ulElem.querySelectorAll('li');
+            for (let liElem of lis){
+                liElem.firstElementChild.addEventListener('click', toEditList);
+                deletePointOfList(liElem);
+                crossText(liElem);
+            }   
+
+            // to use function "toEditList" in everywhere, should declare it outside
+            function toEditList(){
+                let inpElem = document.createElement('input');
+                inpElem.value = this.textContent;
+                this.textContent = '';
+                this.appendChild(inpElem);
+                let self = this;
+                    inpElem.addEventListener('blur', function(){
+                        self.textContent = inpElem.value;
+                        self.addEventListener('click', toEditList);
+                    })
+                this.removeEventListener('click', toEditList);    
+                } 
+           
+            // Add a possibility to create a new point of list
+            let inpElem = document.createElement('input');
+            inpElem.textContent = 'add a new point'
+            body.appendChild(inpElem);
+
+                inpElem.addEventListener('keydown', function (event){
+                    if (event.code == 'Enter') {
+                    let liElem = document.createElement('li');
+                    let spanElem = document.createElement('span');
+                    spanElem.textContent = inpElem.value;
+                    inpElem.value = '';
+                    liElem.appendChild(spanElem);
+                    ulElem.appendChild(liElem);
+                        liElem.firstElementChild.addEventListener('click', toEditList);
+                    deletePointOfList(liElem); 
+                    crossText(liElem);   
+                    }  
+                })  
+                
+            // Add a possibility to delete any point of list, function "deletePointOfList" is also outside
+            function deletePointOfList (li){
+                let aElem = document.createElement('a');
+                aElem.textContent = ' delete a point ';
+                aElem.href = '';
+                li.appendChild(aElem);
+                    aElem.addEventListener('click', function(event){
+                        event.preventDefault();
+                        li.remove();
+                    })
+            } 
+            
+            // Add a possibility to cross the text of list, using class "toCross"
+            function crossText (li){
+                let aElem = document.createElement('a');
+                aElem.textContent = ' /cross the text';
+                aElem.href = '';
+                li.appendChild(aElem);
+                    aElem.addEventListener('click', function(event){
+                        event.preventDefault();
+                        li.firstElementChild.classList.toggle('toCross');
+                    })
+            }
+        }
+
+        createList();
+
+	</script>
+    
+	</body>
+</html>
+

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.1</title>
+	</head>
+	<body>
+
+        
+    
+	<script>
+        
+        let arr = ['a', 'b', 'c', 'd'];
+        
+
+        function createList (){
+            let ulElem = document.createElement('ul');
+            let body = document.querySelector('body');
+            body.appendChild(ulElem);
+            
+            for (let i = 0; i < arr.length; i++){
+                let liElem = document.createElement('li');
+                liElem.textContent = arr[i];
+                ulElem.appendChild(liElem);
+            } 
+        }
+
+        createList();
+
+	</script>
+    
+	</body>
+</html>
+

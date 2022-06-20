@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.2</title>
+	</head>
+	<body>
+
+        
+    
+	<script>
+        
+        let arr = ['a', 'b', 'c', 'd'];
+        
+        function createList () {
+            // Create list
+            let ulElem = document.createElement('ul');
+            let body = document.querySelector('body');
+            body.appendChild(ulElem);
+
+            for (let i = 0; i < arr.length; i++){
+                let liElem = document.createElement('li');
+                liElem.textContent = arr[i];
+                ulElem.appendChild(liElem);
+            } 
+
+            // Add a possibility to edit
+            let lis = ulElem.querySelectorAll('li');
+            for (let liElem of lis){
+                liElem.addEventListener('click', function func(){
+                    let inpElem = document.createElement('input');
+                    inpElem.value = liElem.textContent;
+                    liElem.textContent = '';
+                    liElem.appendChild(inpElem);
+                        inpElem.addEventListener('blur', function(){
+                            liElem.textContent = inpElem.value;
+                            liElem.addEventListener('click', func);
+                        })
+                    liElem.removeEventListener('click', func);    
+                })
+            }
+        }
+
+        createList();
+
+	</script>
+    
+	</body>
+</html>
+

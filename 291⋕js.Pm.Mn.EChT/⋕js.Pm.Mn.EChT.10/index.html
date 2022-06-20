@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.10</title>
+     
+	</head>
+	<body>
+
+        
+    
+	<script>
+ 
+        let employees = [
+        {name: 'vik', age: 30, salary: 400},
+        {name: 'oleg', age: 31, salary: 500},
+        {name: 'nik', age: 32, salary: 600},
+        ];
+
+        let body = document.querySelector('body');
+
+
+        function showEmployees (){
+            let ulEmpls = document.createElement('ul');
+            body.appendChild(ulEmpls);
+
+            // fill the list of data
+            for (let i = 0; i < employees.length; i++){
+                let liEmpl= document.createElement('li');
+                liEmpl.textContent = 'employee ' + (i + 1);
+                ulEmpls.appendChild(liEmpl);
+                let ulEmpl = document.createElement('ul');
+
+                for (let key in employees[i]){
+                    let liElem = document.createElement('li');
+                    liElem.textContent = employees[i][key];
+                    ulEmpl.appendChild(liElem);     
+                } 
+                ulEmpls.appendChild(ulEmpl);
+            }
+        }
+
+        showEmployees();
+        
+	</script>
+    
+	</body>
+</html>
+

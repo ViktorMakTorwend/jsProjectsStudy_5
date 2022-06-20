@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.13</title>
+     
+	</head>
+	<body>
+
+        
+    
+	<script>
+ 
+        let employees = [
+        {name: 'vik', age: 30, salary: 400},
+        {name: 'oleg', age: 31, salary: 500},
+        {name: 'nik', age: 32, salary: 600},
+        ];
+
+        let body = document.querySelector('body');
+        let numOfEmloyees = 1;
+
+
+        function showEmployees (){
+            let ulEmpls = document.createElement('ul');
+            body.appendChild(ulEmpls);
+            
+
+            // fill the list of data
+            for (let i = 0; i < employees.length; i++){
+                addEmpl_inUl(employees, i);
+            }
+
+
+            function addEmpl_inUl (arr, num){
+                let liEmpl= document.createElement('li');
+                liEmpl.textContent = 'employee ' + (numOfEmloyees++);
+                delEmpl(liEmpl);
+
+                ulEmpls.appendChild(liEmpl);
+                let ulEmpl = document.createElement('ul');
+
+                for (let key in arr[num]){
+                    let liElem = document.createElement('li');
+                    liElem.textContent = arr[num][key];
+                    ulEmpl.appendChild(liElem); 
+                        liElem.addEventListener('click', editEmpl);    
+                } 
+                liEmpl.appendChild(ulEmpl);
+            }  
+
+
+
+            // add a possibility to edit
+            function editEmpl (){
+                let inpEdit = document.createElement('input');
+                inpEdit.value = this.textContent;
+                this.textContent = '';
+                this.appendChild(inpEdit);
+                let self = this;
+                    inpEdit.addEventListener('keydown', function(event){
+                        if (event.code == 'Enter')
+                        self.textContent = inpEdit.value;
+                        self.addEventListener('click', editEmpl);
+                    })
+                this.removeEventListener('click', editEmpl);    
+            }
+
+            // add a possibility to del employee
+            function delEmpl (li) {
+                let aElem = document.createElement('a');
+                aElem.textContent = ' del the employee';
+                aElem.href = '';
+                li.appendChild(aElem);
+                    aElem.addEventListener('click', function (event){
+                        event.preventDefault();
+                        li.remove();
+                        numOfEmloyees--;
+                    })
+            }
+
+            // // add a possibility to add a new employee
+            +function addEmpl (){
+                    
+                let inpName = document.createElement('input');
+                inpName.placeholder = 'name';
+                body.appendChild(inpName);
+
+                let inpAge = document.createElement('input');
+                inpAge.placeholder = 'age';
+                body.appendChild(inpAge);
+
+                let inpSalary = document.createElement('input');
+                inpSalary.placeholder = 'salary';
+                body.appendChild(inpSalary);
+
+                    inpName.addEventListener('keydown', function(event){
+                        if (event.code == 'Enter'){
+                            //add a new data in dataBase employees
+                            employees[employees.length] = {};
+                            employees[employees.length-1]['name'] = inpName.value;
+                            inpAge.focus();
+                        }
+                    })
+
+                    inpAge.addEventListener('keydown', function(event){
+                        if (event.code == 'Enter'){
+                            employees[employees.length-1]['age'] = +inpAge.value;
+                            inpSalary.focus();
+                        }
+                    })
+
+                    inpSalary.addEventListener('keydown', function(event){
+                        if (event.code == 'Enter'){
+                            employees[employees.length-1]['salary'] = +inpSalary.value;
+                            addEmpl_inUl(employees, employees.length-1);
+                            inpName.value = '';
+                            inpAge.value = '';
+                            inpSalary.value = '';
+                        }
+                    })
+            }();
+        }
+
+        showEmployees();
+        
+	</script>
+    
+	</body>
+</html>
+

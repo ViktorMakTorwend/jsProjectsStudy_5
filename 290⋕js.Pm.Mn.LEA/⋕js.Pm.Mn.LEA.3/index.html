@@ -52,12 +52,10 @@
                                 // Первая - предыдущая ячейка от выбранной отсутствует и следующая не активна
                                 if(!tdPr && !tdNxt.classList.contains('active')) {
                                     tdElem.classList.add('active');
-                                    console.log(tdElem.previousElementSibling)
                                 }
                                 // Вторая - слудующая после выбранной отсутствует и предыдущая не активна
                                 if(!tdNxt && !tdPr.classList.contains('active')) {
                                     tdElem.classList.add('active');
-                                    console.log(tdElem.previousElementSibling)
                                 }
                                 // Третья - с обеих сторон есть ячейки и они не активны
                                 if (tdPr && tdNxt && !tdNxt.classList.contains('active') && !tdPr.classList.contains('active')) {

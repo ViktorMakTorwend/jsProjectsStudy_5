@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.7</title>
+    <link rel="stylesheet" href="style.css">   
+	</head>
+	<body>
+
+        
+    
+	<script>
+    
+        let employees = [
+        {name: 'employee1', age: 30, salary: 400},
+        {name: 'employee2', age: 31, salary: 500},
+        {name: 'employee3', age: 32, salary: 600},
+        ];
+
+        let body = document.querySelector('body');
+
+
+        function showEmployees (){
+            let table = document.createElement('table');
+            body.appendChild(table);
+
+            // fill the table of data
+            for (let i = 0; i < employees.length; i++){
+                let trElem = document.createElement('tr');
+                for (let key in employees[i]){
+                    let tdElem = document.createElement('td');
+                    tdElem.textContent = employees[i][key];
+                    trElem.appendChild(tdElem);
+                        tdElem.addEventListener('click', editTable);
+                }
+                table.appendChild(trElem);
+            }
+
+            // add a possibility to edit
+            function editTable (){
+                let inpElem = document.createElement('input');
+                inpElem.value = this.textContent;
+                this.textContent = '';
+                this.appendChild(inpElem);
+                let self = this;
+                     inpElem.addEventListener('keydown', function(event){
+                        if (event.code == 'Enter'){
+                           self.textContent = inpElem.value;
+                           self.addEventListener('click', editTable);   
+                        }
+                    }) 
+                this.removeEventListener('click', editTable);    
+            }
+        }
+
+        showEmployees();
+
+	</script>
+    
+	</body>
+</html>
+

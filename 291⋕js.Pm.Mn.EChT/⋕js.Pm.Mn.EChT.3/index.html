@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.Mn.EChT.3</title>
+	</head>
+	<body>
+
+        
+    
+	<script>
+    
+        let arr = ['a', 'b', 'c', 'd'];
+        
+        function createList () {
+            let body = document.querySelector('body');
+
+            // Create list
+            let ulElem = document.createElement('ul');
+            body.appendChild(ulElem);
+
+            for (let i = 0; i < arr.length; i++){
+                let liElem = document.createElement('li');
+                liElem.textContent = arr[i];
+                ulElem.appendChild(liElem);
+            } 
+
+            // Add a possibility to edit
+            let lis = ulElem.querySelectorAll('li');
+            for (let liElem of lis){
+                liElem.addEventListener('click', toEditList)
+            }   
+
+            // to use function "toEditList" in everywhere, should declare it outside
+            function toEditList(){
+                let inpElem = document.createElement('input');
+                inpElem.value = this.textContent;
+                this.textContent = '';
+                this.appendChild(inpElem);
+                let self = this;
+                    inpElem.addEventListener('blur', function(){
+                        self.textContent = inpElem.value;
+                        self.addEventListener('click', toEditList);
+                    })
+                this.removeEventListener('click', toEditList);    
+                } 
+           
+            // Create input
+            let inpElem = document.createElement('input');
+            inpElem.textContent = 'add a new point'
+            body.appendChild(inpElem);
+
+                inpElem.addEventListener('keydown', function (event){
+                    if (event.code == 'Enter') {
+                    let liElem = document.createElement('li');
+                    liElem.textContent = inpElem.value;
+                    inpElem.value = '';
+                    ulElem.appendChild(liElem);
+                        liElem.addEventListener('click', toEditList);
+                    }  
+                })         
+        }
+
+        createList();
+
+	</script>
+    
+	</body>
+</html>
+
