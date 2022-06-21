@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.MCl.PP.1</title>
+	</head>
+	<body>
+        
+        <input id="inp1" type="text">
+        <input id="inp2" type="text">
+        <input id="inp3" type="text">
+        <button>push</button>
+
+	<script>
+        
+        +(function (){
+            let inp1 = document.querySelector('#inp1');
+            let inp2 = document.querySelector('#inp2');
+            let inp3 = document.querySelector('#inp3');
+            let btn = document.querySelector('button');
+
+            btn.addEventListener('click', function(){
+                console.log(Number(inp1.value) + Number(inp2.value) + Number(inp3.value));
+            })
+        })();
+
+	</script>
+    
+	</body>
+</html>
+

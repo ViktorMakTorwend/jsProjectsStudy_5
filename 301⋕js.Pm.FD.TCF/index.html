@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.TCF.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+        
+        <div id="elem"></div>
+
+	<script>
+        
+        let div = document.querySelector('div');
+
+        function createTable (numRow, numCol, refDOM){
+            let table = document.createElement('table');
+            div.appendChild(table);
+
+            for (let i = 0; i < numRow; i++){
+                let tr = document.createElement('tr');
+                for(let k = 0; k < numCol; k++){
+                    let td = document.createElement('td');
+                    tr.appendChild(td); 
+                }
+                table.appendChild(tr);
+            }
+
+        }
+
+        createTable(5, 5, div);
+
+	</script>
+    
+	</body>
+</html>
+

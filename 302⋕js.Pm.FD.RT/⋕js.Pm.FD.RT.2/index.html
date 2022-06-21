@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.RT.2</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+        
+        <div id="elem">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+
+	<script>
+        
+        let div = document.querySelector('#elem');
+
+        function createTable (numRow, numCol){
+            let table = document.createElement('table');
+
+            for (let i = 0; i < numRow; i++){
+                let tr = document.createElement('tr');
+                for(let k = 0; k < numCol; k++){
+                    let td = document.createElement('td');
+                    tr.appendChild(td); 
+                }
+                table.appendChild(tr);
+            }
+            return table;
+        }
+
+        let table = createTable(4, 4);
+        table.style.backgroundColor = 'red';
+        div.appendChild(table);
+
+	</script>
+    
+	</body>
+</html>
+

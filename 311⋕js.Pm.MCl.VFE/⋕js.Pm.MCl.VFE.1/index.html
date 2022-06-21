@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.MCl.VFE.1</title>
+	</head>
+	<body>
+        
+        
+
+	<script>
+        
+        ;(function() {
+            let str1 = 'переменная модуля';
+            let str2 = 'переменная модуля';
+            let str3 = 'переменная модуля';
+            
+            function func1() {
+                alert('функция модуля');
+            }
+            function func2() {
+                alert('функция модуля');
+            }
+            function func3() {
+		        alert('функция модуля');
+	        }
+
+            window.func1 = func1;
+            window.func2 = func2;
+            window.str1 = str1;
+        })();
+
+        console.log(func1(), func2(), str1);
+        //console.log(func3);    выдает ошибку потому что не виден снаружи
+
+	</script>
+    
+	</body>
+</html>
+

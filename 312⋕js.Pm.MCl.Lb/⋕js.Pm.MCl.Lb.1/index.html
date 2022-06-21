@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.MCl.Lb.1</title>
+	</head>
+	<body>
+        
+        
+
+	<script>
+        
+        ;(function() {
+
+            function avg1(arr) {
+                return sum(arr, 1) / arr.length;
+            }
+
+            function avg2(arr) {
+                return sum(arr, 2) / arr.length;
+            }
+
+            function avg3(arr) {
+                return sum(arr, 3) / arr.length;
+            }
+
+            // вспомогательная функция
+            function sum(arr, pow) {
+                let res = 0;
+            
+            for (let elem of arr) {
+                res += elem ** pow;
+                }
+                return res;
+            }
+
+            window.user = {avg1, avg2, avg3};
+        }) ();
+        
+        let arr = [1, 2, 3];
+        console.log(user.avg1(arr));
+
+	</script>
+    
+	</body>
+</html>
+

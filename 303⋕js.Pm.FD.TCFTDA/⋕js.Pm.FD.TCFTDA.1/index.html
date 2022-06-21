@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>⋕js.Pm.FD.TCFTDA.1</title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+        
+        <div id="elem"></div>
+
+	<script>
+        
+        let div = document.querySelector('#elem');
+        let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+        function createTableByArr (arr){
+            let table = document.createElement('table');
+
+            for (let i = 0; i < arr.length; i++){
+                let tr = document.createElement('tr');
+                for(let k = 0; k < arr[i].length; k++){
+                    let td = document.createElement('td');
+                    td.textContent = arr[i][k];
+                    tr.appendChild(td); 
+                }
+                table.appendChild(tr);
+            }
+            return table;
+        }
+
+        let table = createTableByArr(arr);
+        div.appendChild(table);
+
+	</script>
+    
+	</body>
+</html>
+
